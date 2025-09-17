@@ -1,0 +1,83 @@
+/*
+ * Main stylesheet for the Rano Floating WhatsApp Chat plugin.
+ *
+ * The chat button is now wrapped in a container to allow different
+ * positioning options (bottom‑right, bottom‑left, top‑right, top‑left).  A
+ * small popup text element is also included and will appear when the user
+ * hovers over the button.
+ */
+
+/* Container handles positioning on the page */
+.fwac-whatsapp-container {
+    position: fixed;
+    z-index: 1000;
+    display: inline-block;
+}
+
+/* Position modifiers */
+.fwac-position-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+.fwac-position-bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+.fwac-position-top-right {
+    top: 20px;
+    right: 20px;
+}
+.fwac-position-top-left {
+    top: 20px;
+    left: 20px;
+}
+
+/* Style for the chat button itself */
+.fwac-whatsapp-button {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+/* Scale effect on hover for the button */
+.fwac-whatsapp-container:hover .fwac-whatsapp-button {
+    transform: scale(1.1);
+}
+
+/* Icon inside the button */
+.fwac-whatsapp-button img {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+/* Popup text styling – hidden by default */
+.fwac-popup-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    background-color: #ffffff;
+    color: #333333;
+    padding: 6px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show popup on hover */
+.fwac-whatsapp-container:hover .fwac-popup-text {
+    opacity: 1;
+    visibility: visible;
+}
