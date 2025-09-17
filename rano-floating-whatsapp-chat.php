@@ -76,7 +76,7 @@ add_action('admin_enqueue_scripts', 'fwac_admin_enqueue_scripts');
 function fwac_add_whatsapp_button() {
     // Retrieve plugin options and fall back to reasonable defaults
     $phone_number = get_option('fwac_phone_number', '8801xxxxxxxxxx');
-    $message_text = get_option('fwac_message_text', 'I%27m%20interested%20in%20BeautyBellBD');
+    $message_text = get_option('fwac_message_text', 'I%27m%20interested');
     $position      = get_option('fwac_position', 'bottom-right');
     $popup_text    = get_option('fwac_popup_text', __('Chat with us on WhatsApp!', 'fwac'));
 
@@ -139,7 +139,7 @@ function fwac_settings_page() {
                 <tr>
                     <th scope="row"><?php esc_html_e('Default Message Text', 'fwac'); ?></th>
                     <td>
-                        <input type="text" name="fwac_message_text" value="<?php echo esc_attr(get_option('fwac_message_text', 'I%27m%20interested%20in%20BeautyBellBD')); ?>" class="regular-text" />
+                        <input type="text" name="fwac_message_text" value="<?php echo esc_attr(get_option('fwac_message_text', 'I%27m%20interested')); ?>" class="regular-text" />
                         <p class="description"><?php esc_html_e('Enter the default message text when users click the chat button.', 'fwac'); ?></p>
                     </td>
                 </tr>
