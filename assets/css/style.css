@@ -1,0 +1,205 @@
+/*
+ * Rano Floating WhatsApp Chat - Styles
+ * Modern, minimal chat button styling
+ */
+
+/* Chat Button Container */
+#rfwc-chat-button {
+    position: fixed;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+/* Positioning */
+#rfwc-chat-button.rfwc-position-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+#rfwc-chat-button.rfwc-position-bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+#rfwc-chat-button.rfwc-position-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+#rfwc-chat-button.rfwc-position-top-left {
+    top: 20px;
+    left: 20px;
+}
+
+/* Button Link */
+#rfwc-chat-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--rfwc-size, 60px);
+    height: var(--rfwc-size, 60px);
+    background-color: var(--rfwc-color, #25D366);
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+#rfwc-chat-button a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+#rfwc-chat-button a:focus {
+    outline: 3px solid rgba(37, 211, 102, 0.5);
+    outline-offset: 2px;
+}
+
+/* SVG Icon */
+#rfwc-chat-button svg {
+    width: 60%;
+    height: 60%;
+    fill: currentColor;
+}
+
+/* Animations */
+@keyframes rfwc-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    }
+}
+
+@keyframes rfwc-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rfwc-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-2px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(2px);
+    }
+}
+
+/* Animation Classes */
+#rfwc-chat-button.rfwc-animation-pulse a {
+    animation: rfwc-pulse 2s infinite;
+}
+
+#rfwc-chat-button.rfwc-animation-bounce a {
+    animation: rfwc-bounce 1s infinite;
+}
+
+#rfwc-chat-button.rfwc-animation-shake a {
+    animation: rfwc-shake 0.5s infinite;
+}
+
+/* Shortcode Link Styling */
+.rfwc-shortcode-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.rfwc-shortcode-link:hover {
+    background-color: #1FAE55;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    color: white !important;
+}
+
+.rfwc-shortcode-link:focus {
+    outline: 3px solid rgba(37, 211, 102, 0.5);
+    outline-offset: 2px;
+}
+
+.rfwc-shortcode-link::before {
+    content: "💬";
+    font-size: 1.2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #rfwc-chat-button {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    #rfwc-chat-button.rfwc-position-bottom-left {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    #rfwc-chat-button.rfwc-position-top-right {
+        top: 15px;
+        right: 15px;
+    }
+    
+    #rfwc-chat-button.rfwc-position-top-left {
+        top: 15px;
+        left: 15px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    #rfwc-chat-button a {
+        border: 2px solid white;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    #rfwc-chat-button a,
+    .rfwc-shortcode-link {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    #rfwc-chat-button a:hover,
+    .rfwc-shortcode-link:hover {
+        transform: none !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    #rfwc-chat-button a {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+    }
+    
+    #rfwc-chat-button a:hover {
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.8);
+    }
+}
